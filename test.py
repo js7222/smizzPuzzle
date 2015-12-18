@@ -9,6 +9,12 @@ GRID = [0b0010,
         0b1101,
         0b0111]
 
+EMPTYY_GRID = [0b0000,
+               0b0000,
+               0b0000,
+               0b0000]
+
+
 class IsOddTest(unittest.TestCase):
     def test_default_case(self):
         self.failUnless(solver.set_n_bits(3)==7)
@@ -23,6 +29,10 @@ class IsOddTest(unittest.TestCase):
         self.failUnless(solver.get_filtered_column(GRID,2,4)==0b1001)
     def test_get_filtered_column_3(self):
         self.failUnless(solver.get_filtered_column(GRID,3,4)==0b0011)
+    def test_set_filtered_grid_0(self):
+        value = 0b0110
+        solver.set_filtered_column(GRID,0,4, value)
+        self.failUnless(solver.get_filtered_column(GRID,0,4)==value)
         
 def main():
     unittest.main()

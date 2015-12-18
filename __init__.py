@@ -13,6 +13,16 @@ def main():
         permute_after = after[i]
         
         print "len(permute_before) {0} len(permute_after) {1}".format(len(permute_before),len(permute_after))
+    print format(grid.get_filter_column(6), '#027b')
+    print grid.get_unique_rows()
+    before = grid.permute_columns()[:]
+    after = grid.filter_columns()[:]
+    for i in xrange(0,len(before)):
+        permute_before = before[i]
+        permute_after = after[i]
+        
+        print "len(permute_before) {0} len(permute_after) {1}".format(len(permute_before),len(permute_after))
+
     
     return 1
 
