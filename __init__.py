@@ -6,23 +6,8 @@ from data import *
 
 def main():
     grid = Grid(HORIZONTAL_VALUES,VERTICAL_VALUES,FILTERED_GRID)
-    before = grid.permute_rows()[:]
-    after = grid.filter_rows()[:]
-    for i in xrange(0,len(before)):
-        permute_before = before[i]
-        permute_after = after[i]
-        
-        print "len(permute_before) {0} len(permute_after) {1}".format(len(permute_before),len(permute_after))
-    print format(grid.get_filter_column(6), '#027b')
-    print grid.get_unique_rows()
-    before = grid.permute_columns()[:]
-    after = grid.filter_columns()[:]
-    for i in xrange(0,len(before)):
-        permute_before = before[i]
-        permute_after = after[i]
-        
-        print "len(permute_before) {0} len(permute_after) {1}".format(len(permute_before),len(permute_after))
-
+    grid.calculate()
+    grid2 = Grid(HORIZONTAL_VALUES,VERTICAL_VALUES,grid.filtered_grid)
     
     return 1
 
